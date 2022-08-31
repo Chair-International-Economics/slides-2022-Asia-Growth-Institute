@@ -107,7 +107,7 @@ class: middle
 class: center
 ## What are tripoints? How many tripoints are there in the world?
 
-<img src="figures/map_156_triplets_world.png" width="60%" align="centre" />
+<img src="figures/map_156_triplets_world.png" width="50%" align="centre" />
 
 
 tri-border areas (also called tripoints, trijunctions, triple points)
@@ -115,9 +115,9 @@ tri-border areas (also called tripoints, trijunctions, triple points)
 class: center
 ## Identification Strategy ->
 
-##Quasi random treatment: start of the ***first*** regional trade agreement in the triplet.
+Quasi random treatment: start of the ***first*** regional trade agreement in the triplet.
 
-<img src="figures/map5.png" width="55%" align="centre" />
+<img src="figures/map5.png" width="45%" align="centre" />
 
 Data on RTAs taken from Mario Larch’s Regional Trade Agreements Database  Egger, P., & Larch, M. (2008) 
 ---
@@ -156,9 +156,9 @@ Raster of nighttime lights for one buffer area. Data taken from Li, X., Zhou, Y.
 
 
 class: center
-# Final dataset of tripoints and RTAs
+## Final dataset of tripoints and RTAs
 
-<img src="figures/map_triplets_world.png" width="60%" align="centre" />
+<img src="figures/map_triplets_world.png" width="55%" align="centre" />
 
 ---
 
@@ -171,7 +171,7 @@ Where $LIGHTS_{i j t}$ is the sum of lights in the area of the country $i$, in t
 
 .pull-right[
 
-```{r}
+```{r, fig.width=8}
 data <- tibble(
   Y = c(2, 5, 1, 2),
   Unit = c("Treat", "Treat", "Control", "Control"),
@@ -188,7 +188,7 @@ data %>%
   scale_colour_brewer(palette = 'Set1') + 
   theme(axis.title = element_text(size = 20),
         axis.text = element_text(size = 20),
-        legend.position = 'bottom',
+        legend.position = 'right',
         legend.title = element_blank(),
         legend.text = element_text(size = 20),
         plot.background = element_blank()) + 
@@ -253,7 +253,7 @@ Columns with even numbers: standard errors
 ## However...
 
 
-<img src="figures/50kmsc.png" width="100%" align="centre" />
+<img src="figures/50kmsc.png" width="80%" align="centre" />
 
 ---
 
@@ -280,12 +280,12 @@ class: center
 
 .pull-left[ ## City polygons in 1990
 
-![](figures/map7.png)
+<img src="figures/map7.png" width="85%" align="centre" />
 ]
 
 .pull-right[ ## City polygons in 2015
 
-![](figures/map6.png)
+<img src="figures/map6.png" width="85%" align="centre" />
 ]
 
 
@@ -297,7 +297,7 @@ class: center
 <img src="figures/tab1990_50.png" width="100%" align="centre" />
 ]
 .pull-right[
-<img src="figures/1990_50kmsc.png" width="1000%" align="centre" />
+<img src="figures/1990_50kmsc.png" width="100%" align="centre" />
 
 ]
 
@@ -312,7 +312,7 @@ class: center
 <img src="figures/tab2015_50.png" width="100%" align="centre" />
 ]
 .pull-right[
-<img src="figures/2015_50kmsc.png" width="1000%" align="centre" />
+<img src="figures/2015_50kmsc.png" width="100%" align="centre" />
 
 ]
 
@@ -321,13 +321,13 @@ class: center
 class: center
 
 
-<img src="figures/tab2015_55.png" width="65%" align="centre" />
+<img src="figures/tab2015_55.png" width="55%" align="centre" />
 <img src="figures/2015_55kmsc.png" width="45%" align="centre" />
 
 ---
 class: center
 
-<img src="figures/tab2015_60.png" width="65%" align="centre" />
+<img src="figures/tab2015_60.png" width="55%" align="centre" />
 <img src="figures/2015_60kmsc.png" width="45%" align="centre" />
 
 
@@ -495,7 +495,7 @@ $$I = \frac{\sum_i\sum_j w_{ij} z_i.z_j}{\sum_i z_i^2} = \frac{\sum_i (z_i \time
  It captures the relationship of a variable in one location with the spatially weighted average of values at neighboring locations.
 
  
- <img src="figs/moran.PNG" style="width: 90%" />
+ <img src="figs/moran.PNG" style="width: 70%" />
 
 
 ---
@@ -672,12 +672,11 @@ class: center
 ---
 # (6) Next steps
 
-- ### Review a more extensive list of papers that analyse regional convergence in China.
-- ### Select the appropriate $\alpha$ in the growth equation.
-- ### Document and improve the Getis filter function. We would like to have as one of the outputs of this paper a function that can be part of a package for spatial analysis in R. 
-- ### Compare the results of this project with the results reported in previous papers.
+- # Review a more extensive list of papers that analyse regional convergence in China.
+- # Select the appropriate $\alpha$ in the growth equation.
+- # Document and improve the Getis filter function. We would like to have as one of the outputs of this paper a function that can be part of a package for spatial analysis in R. 
+- # Compare the results of this project with the results reported in previous papers.
 
----
 
 ---
 class: center, middle
