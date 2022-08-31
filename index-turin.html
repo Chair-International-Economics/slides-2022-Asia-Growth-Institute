@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The role that geography plays in regional economic growth:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Felipe Santos-Marquez Chair of Economics    Esp.International Economics, Technische Universität Dresden " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# The role that geography plays in regional economic growth:
+## Income convergence of Chinese provinces and the effect of free trade
+agreements on the development of triborders areas
+### Felipe Santos-Marquez<br />Chair of Economics<br /><br /><br />
+Esp.International Economics, Technische Universität Dresden<br />
+### Prepared for the AGI presentation, September 6th 2022
+
+---
+
+class: highlight-last-item, center
+
+
+
+class:middle, center
+&lt;style type="text/css"&gt;
+.highlight-last-item &gt; ul &gt; li, 
+.highlight-last-item &gt; ol &gt; li {
+  opacity: 0.5;
+}
+.highlight-last-item &gt; ul &gt; li:last-of-type,
+.highlight-last-item &gt; ol &gt; li:last-of-type {
+  opacity: 1;
+}
+&lt;/style&gt;
+
+
+# Tri-border Areas and the Location of Economic Activity in Open Economies
+
+
+## Felipe Santos-Marquez  &amp; Christian Lessmann 
+
+
+###Chair of International Economics
+###Technische Universität Dresden
+
+---
+class: center
+##On average, do border and non-border regions have the same level of economic activity?
+--
+
+&lt;!-- ![](figs/col_mun.png) --&gt;
+&lt;!-- &lt;img src="figs/trade.png" style="width: 65%" /&gt; --&gt;
+&lt;img src="figs/trade.png" width="50%" align="centre" /&gt;
+
+Image taken from A am, H. L., Larch, M., &amp; Stadelmann, D. (2021)
+
+---
+class: middle 
+
+# Research question -&gt;
+# What is the causal effect of regional trade agreements among neighboring countries on the economic activity of areas near the international border?
+
+---
+# Related literature
+
+## Trade and the location of economic activity
+
+
+**Krugman, P. (1991)**, **Brülhart, M. (2011)**, **Hirte, G., Lessmann, C., &amp; Seidel, A. (2020)**, **World Bank. (2008)**, **Combes, P. P., Mayer, T., &amp; Thisse, J. F. (2008)**
+
+"... the tendency for trade liberalisation to favour re-location towards border regions emerges as an almost ubiquitous result"  **Brülhart, M. (2011, p. 67)**
+
+
+## Trade openness and international borders:
+
+**McCallum, J. (1995)**,**Eberhard-Ruiz, A., &amp; Moradi, A. (2019)**, **Brülhart, M., Cadot, O., &amp; Himbert, A. (2019)**, **Adam, H. L., Larch, M., &amp; Stadelmann, D. (2021)**
+
+## Nighttime lights as a proxy for economic activity:
+
+**Chen, X., &amp; Nordhaus, W. D. (2011)**, **Henderson, J. V., Storeygard, A., &amp; Weil, D. N. (2012)**, **Nordhaus, W., &amp; Chen, X. (2015)**, **Lessmann, C., &amp; Seidel, A. (2017)**
+
+---
+class: center
+## What are tripoints? How many tripoints are there in the world?
+
+&lt;img src="figures/map_156_triplets_world.png" width="60%" align="centre" /&gt;
+
+
+tri-border areas (also called tripoints, trijunctions, triple points)
+---
+class: center
+## Identification Strategy -&gt;
+
+##Quasi random treatment: start of the ***first*** regional trade agreement in the triplet.
+
+&lt;img src="figures/map5.png" width="55%" align="centre" /&gt;
+
+Data on RTAs taken from Mario Larch’s Regional Trade Agreements Database  Egger, P., &amp; Larch, M. (2008) 
+---
+class: left
+
+##Where is economic activity measured?
+
+.pull-left[ ## Triplet of countries and several buffer area
+
+![](figures/map1.png)
+]
+
+.pull-right[ ## closer view - radius of 75 kilometers
+
+![](figures/map2.png)
+]
+
+
+---
+# How is economic activity measured?
+
+.pull-left[ ## 1992
+
+&lt;img src="figures/map3.png" width="85%" align="centre" /&gt;
+
+]
+
+.pull-right[ ## 2005
+
+&lt;img src="figures/map4.png" width="85%" align="centre" /&gt;
+]
+
+Raster of nighttime lights for one buffer area. Data taken from Li, X., Zhou, Y., Zhao, M., &amp; Zhao, X. (2020)
+
+---
+
+
+class: center
+# Final dataset of tripoints and RTAs
+
+&lt;img src="figures/map_triplets_world.png" width="60%" align="centre" /&gt;
+
+---
+
+# Empirical Startegy: Difference-in-Differences
+
+`$$ln\, LIGHTS_{i j t}=\alpha_{0}+\alpha_{1} {RTA}_{ijt}+ FE +\varepsilon_{i jt}$$`
+
+.pull-left[
+Where `\(LIGHTS_{i j t}\)` is the sum of lights in the area of the country `\(i\)`, in triplet `\(j\)` at time `\(t\)`, `\(R T A_{i j t}\)` is a dummy variable which takes the value of 1 if region `\(i\)` in triplet `\(j\)` is part of a country which had a trade agreement (with other neighboring country in the triplet) in time `\(t\)`, FE are   country-triplet and year fixed effects, and `\(\varepsilon_{ijt}\)` is an idiosyncratic error term.]
+
+.pull-right[
+
+![](index-turin_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+]
+---
+
+# Event-study Design
+
+`$$ln\, LIGHTS_{i j t}=\alpha_{0}+ \sum_{\tau=-q}^{-1}\gamma_{\tau}D_{ijt}^\tau + \sum_{\tau=1}^m\delta_{\tau}D_{ijt}^\tau+ FE +\varepsilon_{i jt}$$`
+
+.pull-left[
+Where `\(LIGHTS_{i j t}\)` is the sum of lights in the area of the country `\(i\)`, in triplet `\(j\)` at time `\(t\)`. Treatment occurs at time 0 and we include q leads or anticipatory effects and m lags or post-treatment effects. FE are country-triplet and year fixed effects, and `\(\varepsilon_{ijt}\)` is an idiosyncratic error term
+]
+
+.pull-right[
+&lt;img src="figures/event_study.png" width="90%" align="centre" /&gt;
+
+Example of a event study plot, image taken from Cunningham, S. (2021).
+
+]
+
+---
+class: center 
+
+#Results : Regression Estimates
+.pull-left[##50 KM
+&lt;img src="figures/tab1.png" width="1000%" align="centre" /&gt;
+
+Columns with odd numbers: clustered errors 
+
+
+Columns with even numbers: standard errors
+]
+.pull-right[##25 KM
+&lt;img src="figures/tab2_25.png" width="100%" align="centre" /&gt;
+]
+
+&lt;!-- --- --&gt;
+&lt;!-- class: center --&gt;
+&lt;!-- &lt;img src="figures/tab2_75.png" width="70%" align="centre" /&gt; --&gt;
+&lt;!-- &lt;img src="figures/tab2_100.png" width="70%" align="centre" /&gt; --&gt;
+
+&lt;!-- --- --&gt;
+&lt;!-- ## However... --&gt;
+
+&lt;!-- &lt;img src="figures/25kmsc.png" width="100%" align="centre" /&gt; --&gt;
+
+&lt;!-- mention parallel trends and no clear estimate of treatment coefficient --&gt;
+
+---
+## However...
+
+
+&lt;img src="figures/50kmsc.png" width="100%" align="centre" /&gt;
+
+---
+
+### Cities
+
+
+.pull-left[ ### 1990
+
+![](figures/map1990.png)
+]
+
+.pull-right[ ### 2015
+
+![](figures/map2015.png)
+]
+
+
+Data for the poygons of cities taken from Bluhm, et al. (2021). Number of cities in 1990 and 2015 is **24652** and **30675**.
+
+---
+class: center 
+
+## A triplet of countries, cities and buffer areas
+
+.pull-left[ ## City polygons in 1990
+
+![](figures/map7.png)
+]
+
+.pull-right[ ## City polygons in 2015
+
+![](figures/map6.png)
+]
+
+
+---
+class: center
+
+# Cities in 1990 
+.pull-left[
+&lt;img src="figures/tab1990_50.png" width="100%" align="centre" /&gt;
+]
+.pull-right[
+&lt;img src="figures/1990_50kmsc.png" width="1000%" align="centre" /&gt;
+
+]
+
+
+---
+class: center
+
+
+## Cities in 2015
+
+.pull-left[
+&lt;img src="figures/tab2015_50.png" width="100%" align="centre" /&gt;
+]
+.pull-right[
+&lt;img src="figures/2015_50kmsc.png" width="1000%" align="centre" /&gt;
+
+]
+
+
+---
+class: center
+
+
+&lt;img src="figures/tab2015_55.png" width="65%" align="centre" /&gt;
+&lt;img src="figures/2015_55kmsc.png" width="65%" align="centre" /&gt;
+
+---
+class: center
+
+&lt;img src="figures/tab2015_60.png" width="65%" align="centre" /&gt;
+&lt;img src="figures/2015_60kmsc.png" width="65%" align="centre" /&gt;
+
+
+---
+class: center
+
+## location of tripoints 
+
+.pull-left[**Original sample**
+
+&lt;img src="figures/map_triplets_all_world_cities_2015_60.png" width="65%" align="centre" /&gt;]
+.pull-right[**Restricted sample**
+
+&lt;img src="figures/map_triplets_selected_world_cities_2015_60.png" width="40%" align="centre" /&gt;]
+
+&lt;!-- --- --&gt;
+
+&lt;!-- ## Event study plot - full dataset (60 kms radius) --&gt;
+
+&lt;!-- &lt;img src="figures/2015_60kmsc_all.png" width="100%" align="centre" /&gt; --&gt;
+
+---
+
+# Conclusions:
+
+- There is not a significant effect of RTAs on economic activity for buffer areas.
+- There is not a significant effect of RTAs on economic activity for 1990 cities within buffer areas.
+- The effect of RTAs on economic activity can be measured for 2015 cities.
+- RTAs appear to be driving the agglomeration of output in cities/population growth of cities. 
+
+# Further research: 
+
+- Heterogeneous effects of RTAs for different geographical regions.
+- The effects of different types of trade agreements on the light intensities at border regions.
+&lt;!-- - The datasets may be too small to consider  --&gt;
+- Robustness checks, another DID estimators **Goodman-Bacon, A. (2021)**, **Callaway, B., &amp; Sant’Anna, P. H. (2021)**
+
+
+---
+
+
+## References
+
+
+Adam, H. L., Larch, M., &amp; Stadelmann, D. (2021). Subnational Income Growth and International Border Effects. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.3863023
+
+Bluhm, R., Lessmann, C., &amp; Schaudt, P. (2021). The Political Geography of Cities. SSRN Electronic Journal, October. https://doi.org/10.2139/ssrn.3953012
+
+Brülhart, M. (2011). The spatial effects of trade openness: a survey. Review of World Economics, 147(1), 59-83.
+
+Brülhart, M., Cadot, O., &amp; Himbert, A. (2019). Let There Be Light: Trade and the Development of Border Regions.
+
+Callaway, B., &amp; Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. Journal of Econometrics, 225(2), 200-230.
+
+Chen, X., &amp; Nordhaus, W. D. (2011). Using luminosity data as a proxy for economic statistics. Proceedings of the National Academy of Sciences, 108(21), 8589-8594.
+
+Combes, P. P., Mayer, T., &amp; Thisse, J. F. (2008). Economic geography. In Economic Geography. Princeton University Press.
+
+---
+
+Cunningham, S. (2021). Causal inference. In Causal Inference. Yale University Press.
+
+Eberhard-Ruiz, A., &amp; Moradi, A. (2019). Regional market integration in East Africa: Local but no regional effects?. Journal of Development Economics, 140, 255-268.
+
+Egger, P., &amp; Larch, M. (2008). Interdependent preferential trade agreement memberships: An empirical analysis. Journal of International Economics, 76(2), 384-399. 
+
+
+Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. Journal of Econometrics, 225(2), 254-277.
+
+Henderson, J. V., Storeygard, A., &amp; Weil, D. N. (2012). Measuring economic growth from outer space. American economic review, 102(2), 994-1028.
+
+Hirte, G., Lessmann, C., &amp; Seidel, A. (2020). International trade, geographic heterogeneity and interregional inequality. European Economic Review, 127, 103427.
+
+Krugman, P. (1991). Increasing returns and economic geography. Journal of political economy, 99(3), 483-499.
+
+Lessmann, C., &amp; Seidel, A. (2017). Regional inequality, convergence, and its determinants–A view from outer space. European Economic Review, 92, 110-132.
+
+Li, X., Zhou, Y., Zhao, M., &amp; Zhao, X. (2020). A harmonized global nighttime light dataset 1992–2018. Scientific Data, 7(1). https://doi.org/10.1038/s41597-020-0510-y
+
+---
+
+McCallum, J. (1995). National borders matter: Canada-US regional trade patterns. The American Economic Review, 85(3), 615-623.
+
+Nordhaus, W., &amp; Chen, X. (2015). A sharper image? Estimates of the precision of nighttime lights as a proxy for economic statistics. Journal of Economic Geography, 15(1), 217-246.
+
+World Bank. (2008). World development report 2009: Reshaping economic geography. The World Bank.
+
+---
+class: middle, center
+
+# When regions grow Solo(w): Neoclassical convergence and spatial filtering across Chinese provinces 
+
+## Felipe Santos-Marquez, TU Dresden, Germany  
+## Carlos Mendez, Nagoya University, Japan
+## Linda Glawe, University of Hagen, Germany
+
+---
+
+## Motivation:
+
+- The estimates from the augmented Solow growth model are biased since neighbor effects are not taken into account.
+- There is limited research on the effect geographical links and convergence accounting across Chinese provinces.
+  
+## Research Question:
+  
+- **To what extent the role of space affects the convergence of Chinese regions?**
+- **What are the contribution of capital inputs and productivity on the convergence of provincial income per capita?** 
+
+## Methods:
+
+Classical convergence framework (Barro and Sala-i-Martin, 1992) / Convergence growth accounting (Wong, 2007; Feyrer, 2007) /  Spatial autocorrelation - Moran's I (Moran, 1948) / Getis Filter (Getis, 1995, 2010)
+
+
+---
+
+# Outline
+
+
+1. **Introduction and Data**
+
+  - A newly constructed data-set
+
+2. **Methods**
+
+  - **Spatial autocorrelation** Standard Moran's I
+  - **Spatial Filtering Perspective**  Getis Spatial Filter
+  - **Convergence regression and accounting** 
+ 
+3. **Related Literature**
+
+4. **Results**
+
+  - Spatial filtering
+  - Spatial and non-spatial convergence accounting
+  
+4. **Concluding Remarks**
+
+
+---
+
+# (1) Data
+
+
+###A balanced dataset for 31 provinces over the 1990-2017 period.
+
+### **GDP per capita**. Real GDP in constant 2010 prices is calculated using GDP and CPI data from the National Bureau of Statistics of China (NBS, 2021).
+
+
+### **Human capital**. The CHLR human capital index (cf. Fraumeni et al., 2019). 
+
+
+### **Capital output ratio**. the current provincial physical capital stock divided by the current provincial GDP.
+
+
+---
+class: middle
+
+# (2) Spatial Autocorrelation : 
+
+##Moran's I
+
+`$$I = \frac{\sum_i\sum_j w_{ij} z_i.z_j}{\sum_i z_i^2} = \frac{\sum_i (z_i \times \sum_j w_{ij} z_j)}{\sum_i z_i^2}.$$`
+ It captures the relationship of a variable in one location with the spatially weighted average of values at neighboring locations.
+
+ 
+ &lt;img src="figs/moran.PNG" style="width: 90%" /&gt;
+
+
+---
+
+# (2) Spatial Filtering Perspective
+
+&lt;img src="figs/getis.PNG" style="width: 90%" /&gt;
+ 
+### **A spatial filtering of the data can help us to avoid misguided interpretation**.
+
+---
+class: center
+# (2) Beta convergence
+
+&lt;img src="figs/beta01.PNG" style="width: 9100%" /&gt;
+
+
+---
+class: center
+# (2) Growth accounting 
+
+
+### Growth accounting decomposition based on Solow (1956):
+\begin{equation} 
+Y = \left( \frac{K}{Y} \right) ^{\frac{\alpha}{1-\alpha}}A h L.
+\end{equation}
+
+\begin{equation} \label{eq:linear-ss-pc-cobb}
+\ln \left( \frac{Y}{L} \right) = \frac{\alpha}{1-\alpha} \ln \left( \frac{K}{Y} \right) + \ln (h) + \ln (A)
+\end{equation}
+
+### Taking derivatives with respect to time yields a growth accounting decomposition:
+\begin{equation}
+g \left( \frac{Y}{L} \right) = \frac{\alpha}{1-\alpha} g \left( \frac{K}{Y} \right) + g(h) +g(A),
+\end{equation}
+
+### We can write this equation as:
+
+\begin{equation} \label{eq:growth-acc-simple}
+g (y) = g(k) + g(h) +g(A),
+\end{equation}
+
+---
+class: center
+# (2) Convergence accounting 
+
+### The standard unconditional beta convergence regression is:
+
+
+`$$g (y)= c + \beta \ln (y_{t 0}) + \epsilon$$`
+
+### From the last equation in the previous slide it can be shown that:
+
+`$$\beta = \beta_{k}+\beta_{h}+\beta_{A}$$`
+
+### where the `\(\beta_i\)` coefficients are obtained from the following regressions
+
+
+`$$g(k)=c_{k}+\beta_{k} \ln (y_{t 0}) + \epsilon$$`   
+
+`$$g(h)=c_{h}+\beta_{h} \ln (y_{t 0}) + \epsilon$$`  
+
+`$$g(A)=c_{A}+\beta_{A} \ln (y_{t 0}) + \epsilon$$`   
+
+---
+class: center
+# (2)  Spatial Convergence accounting
+
+In the context of our production function, let us define the log of the net spatial residual  as: 
+`$$\ln \left( \frac{Y}{L} \right) = \frac{\alpha}{1-\alpha} \ln \widetilde{\left( \frac{K}{Y} \right)} + \ln (\widetilde{h}) + \ln (\widetilde{A}) + \ln (NSR)$$`
+which implies: 
+`$$g (y) = g(\widetilde{k}) + g(\widetilde{h}) + g(\widetilde{A}) + g(NSR)\Longrightarrow\beta = \beta_{\tilde{k}} + \beta_{\tilde{h}} + \beta_{\tilde{A}} + \beta_{NSR}$$`
+
+
+
+where the `\(\beta_i\)` coefficients are obtained from the following regressions
+
+`$$g(\tilde{k})=c_{\tilde{k}}+\beta_{\tilde{k}} \ln (y_{t 0}) + \epsilon$$`
+
+`$$g(\tilde{h})=c_{h}+\beta_{\tilde{h}} \ln (y_{t 0}) + \epsilon$$`
+
+`$$g(\tilde{A})=c_{\tilde{A}}+\beta_{\tilde{A}} \ln (y_{t 0}) + \epsilon$$`
+
+`$$g(NSR)=c_{NSR}+\beta_{NSR} \ln (y_{t 0}) + \epsilon$$`
+
+---
+# (2) Related literature
+
+### Convergence of Chinese provinces 
+
+- **Chen and Fleisher (1996)** there are no
+signs of unconditional convergence for the sample period 1952-1992.
+Nevertheless, for the most recent period of 1978-1993 they find weak
+evidence of unconditional convergence. 
+- **Raiser (1998)**  The author uses data for 29
+provinces for the period 1978-1992. He reports that overall provincial income levels have converged. Nevertheless, a major slow-down in the
+convergence speed was reported in the second half of the 1980s. 
+-  **Weeks and Yao (2003)** . The authors use the system-GMM
+estimator and report a very slow convergence speed (0.41%) during the pre- reform period 1953–1977 and a much faster speed (2.23%) during the reform period 1978–1997.
+
+### Convergence and spatial filtering 
+
+-  Europe (Fischer and Stumpner, 2010),  Brazil (Cravo and Resende, 2013) 
+- Indonesia (Santos-Marquez et al., 2022),  Spain (Maza and Villaverde, 2009) 
+- **China** by **Villaverde and Maza
+(2012)**,  Chinese provincial GDP per capita in 1992-2007. they use a different convergence framework known as distribution dynamics. 
+
+---
+class: center
+
+# (3) Results: Spatial filtering
+
+Spatial autocorrelation for A, K/Y , h and Y /L is continuously significant from 1998 to 2010
+
+ &lt;img src="figs/moran.tab.PNG" style="width: 70%" /&gt;
+
+---
+class: center 
+
+# (3) Results: Spatial filtering
+
+
+.pull-left[
+
+##(a) 1998
+![](figs/map_gdp_per_capita98.png)
+]
+
+.pull-right[
+
+##(b) 2010
+![](figs/map_gdp_per_capita10.png)
+]
+
+---
+# (3) Results: beta convergence
+
+### There is overall unconditional convergence in provincial GDP per capita
+
+.pull-left[
+
+##**Original data**
+
+![](figs/beta1.png)
+]
+
+.pull-right[
+
+##**Filtered data**
+
+![](figs/beta2.png)
+]
+
+---
+class: center
+# (3) Results: spatial and non-spatial convergence accounting
+
+
+ &lt;img src="figs/conv.accounting.PNG" style="width: 100%" /&gt;
+
+---
+# (6) Concluding Remarks
+
+
+- ###Convergence of TFP explains most of the convergence of regional income. 
+- ### The convergence of capital inputs account for about 30% of income covergence.
+- ### Spatial effects are reducing the regional income disparities.
+
+## Implications 
+
+- To spatially filter regional income and other variables is important in order to avoid misleading interpretations.
+- Geography matters! breaking spatial barriers and  continuing to enhance inter-regional connectivity and cooperation must be on top of the policy agenda.
+
+---
+# (6) Next steps
+
+- ### Review a more extensive list of papers that analyse regional convergence in China.
+- ### Select the appropriate `\(\alpha\)` in the growth equation.
+- ### Document and improve the Getis filter function. We would like to have as one of the outputs of this paper a function that can be part of a package for spatial analysis in R. 
+- ### Compare the results of this project with the results reported in previous papers.
+
+---
+
+---
+class: center, middle
+
+# Thank you very much for your attention
+&lt;!-- personal website: https://felipe-santos.rbind.io --&gt;
+
+
+
+
+.pull-left[
+![](figs/QuaRCS-lab-logo2.png)
+
+**Quantitative Regional and Computational Science lab**
+
+
+https://quarcs-lab.org
+
+]
+
+.pull-right[
+
+![](figs/chair.png)
+**Chair of International Economics
+Technische Universität Dresden
+Germany**
+
+https://tu-dresden.de/bu/wirtschaft/vwl/iwb 
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
